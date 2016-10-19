@@ -1,9 +1,9 @@
 # kontribusi kelompok 7
 1. ikut hadir pada saat presentasi
 2. membantu dalam proses pencarian referensi
-3. membantu dalam proses sebagai berikut dalam bahasa pemrograman java yang nantinya akan di ubah ke dalam bahasa pemrograman php :
+3. membantu dalam proses IP sampai Leftshift namun dalam bahasa pemrograman java yang nantinya akan di ubah ke dalam bahasa pemrograman php :
 
-Array Tabel initial permutation(IP) Tabel ini di gunakan untuk melakukan permutasi pada plaintext
+Array Tabel initial permutation(IP) Tabel ini di gunakan untuk melakukan permutasi awal pada plaintext dalam proses enkripsi
 
       private static final byte[] IP = { 
       58, 50, 42, 34, 26, 18, 10, 2,
@@ -15,6 +15,17 @@ Array Tabel initial permutation(IP) Tabel ini di gunakan untuk melakukan permuta
       61, 53, 45, 37, 29, 21, 13, 5,
       63, 55, 47, 39, 31, 23, 15, 7 
       };
+Array Tabel PC1 Di gunakan untuk melakukan permutasi awal pada key dalam proses enkripsi
+
+    private static final byte[] PC1 = {
+    57, 49, 41, 33, 25, 17, 9,
+    1,  58, 50, 42, 34, 26, 18,
+    10, 2,  59, 51, 43, 35, 27,
+    19, 11, 3,  60, 52, 44, 36,
+    63, 55, 47, 39, 31, 23, 15,
+    7,  62, 54, 46, 38, 30, 22,
+    14, 6,  61, 53, 45, 37, 29,
+    21, 13, 5,  28, 20, 12, 4
 Array rotations Sebuah array yang di susun untuk menyimpan jumlah pergeseran/rotasi yang harus di lakukan pada setiap putaran/pergeseran
 
       private static final byte[] rotations = {
