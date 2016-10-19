@@ -1,7 +1,7 @@
 # kontribusi kelompok 7
 1. ikut hadir pada saat presentasi
 2. membantu dalam proses pencarian referensi
-3. membantu dalam proses sebagai berikut dalam bahasa pemrograman java :
+3. membantu dalam proses sebagai berikut dalam bahasa pemrograman java yang nantinya akan di ubah ke dalam bahasa pemrograman php :
 
 Array Tabel initial permutation(IP) Tabel ini di gunakan untuk melakukan permutasi pada plaintext
 
@@ -31,6 +31,18 @@ kemudian plaintext yang sudah melalui tahap IP maka plaintext tersebut di bagi 2
       int L[] = new int[32];
       int R[] = new int[32];
       int i;
+fungsi berikut merupakan tahap pembagian key menjadi 2 yaitu C dan D yang masing-masing memiliki 28 bit sedangkan 8 bit terakhir di hilangkan
+
+dimana C dimulai dari bit 0-27
+
+      for(i=0 ; i < 28 ; i++) {
+        C[i] = keyBits[PC1[i]-1];
+      }
+sedangkan D dimulai dari bit 28-55
+
+      for( ; i < 56 ; i++) {
+        D[i-28] = keyBits[PC1[i]-1];
+      }
 
 C1 dan D1 merupakan sebuah nilai baru dari C dan D yang mana akan dilakukan perubahan yaitu rotasi
 
