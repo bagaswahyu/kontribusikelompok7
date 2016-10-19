@@ -3,7 +3,7 @@
 2. membantu dalam proses pencarian referensi
 3. membantu dalam proses sebagai berikut dalam bahasa pemrograman java :
 
-- Array Tabel initial permutation(IP) Tabel ini di gunakan untuk melakukan permutasi pada plaintext
+Array Tabel initial permutation(IP) Tabel ini di gunakan untuk melakukan permutasi pada plaintext
 
       private static final byte[] IP = { 
       58, 50, 42, 34, 26, 18, 10, 2,
@@ -15,44 +15,44 @@
       61, 53, 45, 37, 29, 21, 13, 5,
       63, 55, 47, 39, 31, 23, 15, 7 
       };
-- Array rotations Sebuah array yang di susun untuk menyimpan jumlah pergeseran/rotasi yang harus di lakukan pada setiap putaran/pergeseran
+Array rotations Sebuah array yang di susun untuk menyimpan jumlah pergeseran/rotasi yang harus di lakukan pada setiap putaran/pergeseran
 
       private static final byte[] rotations = {
       1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1
       };
-- plaintext yang sudah dijadikan biner maka setiap bitnya dimasukan ke dalam urutan array tabel IP melalui fungsi berikut
+plaintext yang sudah dijadikan biner maka setiap bitnya dimasukan ke dalam urutan array tabel IP melalui fungsi berikut
 
       int newBits[] = new int[inputBits.length];
       for(int i=0 ; i < inputBits.length ; i++) {
         newBits[i] = inputBits[IP[i]-1];
       }
-- kemudian plaintext yang sudah melalui tahap IP maka plaintext tersebut di bagi 2 masing-masing 32 bit dengan inisial L dan R dengan fungsi berikut
+kemudian plaintext yang sudah melalui tahap IP maka plaintext tersebut di bagi 2 masing-masing 32 bit dengan inisial L dan R dengan fungsi berikut
 
       int L[] = new int[32];
       int R[] = new int[32];
       int i;
 
-- C1 dan D1 merupakan sebuah nilai baru dari C dan D yang mana akan dilakukan perubahan yaitu rotasi
+C1 dan D1 merupakan sebuah nilai baru dari C dan D yang mana akan dilakukan perubahan yaitu rotasi
 
       int C1[] = new int[28];
       int D1[] = new int[28];
-- RotationTimes merupakan variabel yang digunakan untuk menampung array rotations yang fungsinya untuk mengatur berapa banyak pergeseran untuk diselesaikan
+RotationTimes merupakan variabel yang digunakan untuk menampung array rotations yang fungsinya untuk mengatur berapa banyak pergeseran untuk diselesaikan
 
       int rotationTimes = (int) rotations[round];  
         C1 = leftShift(C, rotationTimes);
         D1 = leftShift(D, rotationTimes);
-- selanjutnya C1 dan D1 di tampung dalam sebuah variabel yaitu CnDn yang berisikan 56 bit gabungan dari bit C1 dan D1
+selanjutnya C1 dan D1 di tampung dalam sebuah variabel yaitu CnDn yang berisikan 56 bit gabungan dari bit C1 dan D1
 
       int CnDn[] = new int[56];
       System.arraycopy(C1, 0, CnDn, 0, 28);
       System.arraycopy(D1, 0, CnDn, 28, 28);
 
-- berikut ini adalah fungsi yang di gunakan untuk melakukan pergeseran/rotasi
+berikut ini adalah fungsi yang di gunakan untuk melakukan pergeseran/rotasi
 
-- (n) berfungsi sebagai jumlah pergeseran bits
+(n) berfungsi sebagai jumlah pergeseran bits
 
       private static int[] leftShift(int[], int n) {
-- nantinya pergeseran key yang sudah di bagi 2 menjadi C dan D terjadi di sini, yang mana bit awal di geser ke bit terakhir dan sisanya setiap bit digeser ke kiri
+nantinya pergeseran key yang sudah di bagi 2 menjadi C dan D terjadi di sini, yang mana bit awal di geser ke bit terakhir dan sisanya setiap bit digeser ke kiri
 
       int answer[] = new int[bits.length];
       System.arraycopy(bits, 0, answer, 0, bits.length);
